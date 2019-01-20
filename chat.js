@@ -12,6 +12,7 @@ exports.subscribe = function(req, res) {
 exports.publish = function(message) {
   console.log("publish '%s'", message);
   clients.forEach(function(res) {
+    console.log(clients.length);
     res.end(`${message}secretSplitter${clients.length}`);
   });
 
